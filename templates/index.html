@@ -1,120 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fake Product Review Detection</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family: Arial, sans-serif;
-        }
+<title>Fake Product Review Detection</title>
 
-        body{
-            background: linear-gradient(135deg,#1e3c72,#2a5298);
-            min-height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-        }
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
 
-        .container{
-            background:white;
-            width:700px;
-            padding:30px;
-            border-radius:15px;
-            box-shadow:0 10px 25px rgba(0,0,0,0.3);
-            text-align:center;
-        }
+.container{
+    width:700px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+}
 
-        h1{
-            color:#1e3c72;
-            margin-bottom:10px;
-        }
+h1{
+    text-align:center;
+    color:#243b55;
+    margin-bottom:10px;
+}
 
-        p{
-            color:#666;
-            margin-bottom:20px;
-        }
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+}
 
-        textarea{
-            width:100%;
-            height:150px;
-            padding:15px;
-            border:2px solid #ccc;
-            border-radius:10px;
-            resize:none;
-            font-size:16px;
-        }
+textarea{
+    width:100%;
+    height:180px;
+    border:2px solid #ddd;
+    border-radius:12px;
+    padding:15px;
+    font-size:16px;
+    resize:none;
+}
 
-        textarea:focus{
-            outline:none;
-            border-color:#1e3c72;
-        }
+textarea:focus{
+    outline:none;
+    border-color:#243b55;
+}
 
-        button{
-            margin-top:20px;
-            background:#1e3c72;
-            color:white;
-            border:none;
-            padding:12px 30px;
-            font-size:16px;
-            border-radius:8px;
-            cursor:pointer;
-            transition:0.3s;
-        }
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#243b55;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+}
 
-        button:hover{
-            background:#2a5298;
-        }
+button:hover{
+    background:#1a2d44;
+}
 
-        .result{
-            margin-top:25px;
-            font-size:22px;
-            font-weight:bold;
-            padding:15px;
-            border-radius:10px;
-        }
+.result{
+    margin-top:25px;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
 
-        .genuine{
-            background:#d4edda;
-            color:#155724;
-        }
+.genuine{
+    background:#d4edda;
+    color:#155724;
+}
 
-        .fake{
-            background:#f8d7da;
-            color:#721c24;
-        }
+.fake{
+    background:#f8d7da;
+    color:#721c24;
+}
 
-        footer{
-            margin-top:20px;
-            color:#777;
-            font-size:14px;
-        }
-    </style>
+.footer{
+    margin-top:20px;
+    text-align:center;
+    color:#777;
+    font-size:14px;
+}
+</style>
+
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>Fake Product Review Detection</h1>
+    <h1>🔍 Fake Product Review Detection</h1>
 
-    <p>
-        Enter a product review below and our NLP model will predict
-        whether it is Genuine or Fake.
+    <p class="subtitle">
+        Enter a product review and let our NLP model analyze it.
     </p>
 
     <form method="POST">
 
         <textarea
             name="review"
-            placeholder="Enter product review here..."
+            placeholder="Example: This product changed my life! Best purchase ever..."
             required></textarea>
-
-        <br>
 
         <button type="submit">
             Analyze Review
@@ -126,19 +124,19 @@
 
         {% if prediction == "Genuine Review" %}
             <div class="result genuine">
-                ✅ {{ prediction }}
+                ✅ Genuine Review
             </div>
         {% else %}
             <div class="result fake">
-                ❌ {{ prediction }}
+                ❌ Fake Review
             </div>
         {% endif %}
 
     {% endif %}
 
-    <footer>
-        Developed using NLP, TF-IDF and Logistic Regression
-    </footer>
+    <div class="footer">
+        Powered by NLP • TF-IDF • Logistic Regression
+    </div>
 
 </div>
 
