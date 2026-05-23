@@ -121,7 +121,6 @@ fake-product-review-detection/
 │
 ├── app.py
 ├── train_model.py
-├── generate_dataset.py
 ├── reviews.csv
 ├── model.pkl
 ├── requirements.txt
